@@ -10,28 +10,50 @@
     <script src="node_modules/vue-router/dist/vue-router.min.js"></script>
     <script src="node_modules/vuex/dist/vuex.min.js"></script>
     <script src="node_modules/seajs/dist/sea.js"></script>
-    <script src="node_modules/seajs-text/dist/seajs-text.js"></script>
-    <script src="node_modules/seajs-css/dist/seajs-css.js"></script>
+    <script src="js/seajs-text/dist/seajs-text.js"></script>
+    <script src="js/seajs-css/dist/seajs-css.js"></script>
 </head>
 <body>
-    <div id="app">
-        <header id="top">
-            <div class="header_left">
-
+    <div id="app" style="height: 0px;">
+        <div id="slider_nav">
+            <div class="slider_list">
+                    <ul>
+                        <router-link to="/" tag="li">首页</router-link>
+                        <router-link to="/login" tag="li">login</router-link>
+                        <router-link to="/login1" tag="li">login1</router-link>
+                    </ul>
             </div>
-            <div class="header_center">
-                <ul>
-                    <li>首页</li>
-                    <li>首页</li>
-                    <li>首页</li>
-                    <li>首页</li>
-                </ul>
+        </div>
+        <div id="top">
+                <nav class="nav">
+                    <div class="header_left">
+                        logo
+                    </div>
+                <div class="header_center">
+                    <ul>
+                        <router-link to="/" tag="li">首页</router-link>
+                        <router-link to="/login" tag="li">login</router-link>
+                        <router-link to="/login1" tag="li">login1</router-link>
+                    </ul>
+                </div>
+                <div class="header_right">
+                        右边
+                </div>
+                <div class="out" v-if="showindex" @click="outlist()">   
+                    <span>点击</span>
+                    
+                </div>
+                <div class="out" v-else @click="intlist()">   
+                    <span>取消</span>
+                </div>
+            </nav>
+            <div class="clear"></div>
+            <router-view ></router-view>
+            <div class="clear"></div>
+            <div class="footer">
+                    尾部
             </div>
-            <div class="header_right">
-
-            </div>
-        </header>
-        <router-view></router-view>
+        </div>
     </div>
 </body>
 <script>

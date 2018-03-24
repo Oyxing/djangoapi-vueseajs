@@ -1,16 +1,16 @@
 define(function(require,exports,moudle){
     //引用html文件
-        var temp = require("../template/login.tpl")
+        var temp = require("../template/index1.tpl")
         var app={
             data:function(){
                 return{
-                    msgess:'login'
+                    msgess:'index'
                 }
             },
             template:temp,
             created(){
-                console.log('login')
-                console.log(this.$store.state.name)
+                // console.log('index')
+                // console.log(this.$store.state.name)
             }
         }
         exports.app=app
